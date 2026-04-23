@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bankist – Online Banking</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+    <!-- LOGIN SCREEN with YOUR LOGO IMAGE -->
+    <div id="loginScreen" class="login-screen">
+      <!-- Replace "logo.png" with your actual image filename -->
+      <div class="logo">
+        <img src="logo.jpg" alt="Bankist Logo" class="logo-img">
+        
+      </div>
+      <p class="login-prompt">Log in to get started</p>
+      <div class="login-form">
+        <div class="input-field">
+          <label>user</label>
+          <input type="text" id="loginUser">
+        </div>
+        <div class="input-field">
+          <label>PIN</label>
+          <input type="password" id="loginPin" placeholder="****">
+        </div>
+        <button id="loginBtn" class="login-btn">→</button>
+      </div>
+    </div>
+
+    <!-- MAIN DASHBOARD (after login) -->
+    <div id="dashboard" class="dashboard" style="display: none;">
+      <!-- Top bar with logo image -->
+      <div class="top-bar">
+        <div class="logo-small">
+          <img src="logo.jpg" alt="Logo" class="logo-small-img">
+          
+        </div>
+       
+        
+        <div class="welcome-message" id="welcomeMsg">Good afternoon, <span id="userName">Biniyam Jemal Shallo</span>!</div>
+      </div>
+
+      <!-- Login credentials inline -->
+      <div class="login-credentials">
+        <div class="cred-item">
+          <label>user</label>
+          <span id="displayUser">BEN</span>
+        </div>
+        <div class="cred-item">
+          <label>PIN</label>
+          <span id="displayPin">....</span>
+        </div>
+      </div>
+
+      <!-- Balance area -->
+      <div class="balance-area">
+        <div>
+          <p class="balance-label">Current balance</p>
+          <p class="balance-value" id="balanceValue">birr0.00</p>
+          <p class="balance-date" id="currentDate">As of --/--/----, --:--</p>
+        </div>
+        <div class="summary">
+          <div> IN <span id="sumIn">birr0</span></div>
+          <div> OUT <span id="sumOut">birr0</span></div>
+          <div> INTEREST <span id="sumInterest">birr0</span></div>
+        </div>
+      </div>
+
+      <!-- Two columns -->
+      <div class="main-grid">
+        <!-- Movements -->
+        <div class="movements-container">
+          <div class="movements-header">
+            <h3><i class="fas fa-history"></i> Transactions</h3>
+            <button id="sortBtn" class="sort-btn">⇅ SORT</button>
+          </div>
+          <ul id="movementsList" class="movements-list"></ul>
+        </div>
+
+        <!-- Operations -->
+        <div class="operations">
+          <div class="op-card">
+            <h4>Transfer money</h4>
+            <input type="text" id="transferTo" placeholder="Transfer to">
+            <input type="number" id="transferAmount" placeholder="Amount">
+            <button id="transferBtn">→</button>
+          </div>
+          <div class="op-card">
+            <h4>Request loan</h4>
+            <input type="number" id="loanAmount" placeholder="Amount">
+            <button id="loanBtn">→</button>
+          </div>
+          <div class="op-card">
+            <h4>Close account</h4>
+            <input type="text" id="closeUser" placeholder="Confirm user">
+            <input type="password" id="closePin" placeholder="Confirm PIN">
+            <button id="closeBtn" class="danger-btn">→</button>
+          </div>
+        </div>
+      </div>
+ <div class="footer-timer">
+        <div class="timer" id="timerBox">You will be logged out in 10:00</div>
+        <div class="sort-note">SORT</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
